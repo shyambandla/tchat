@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div>
+<div class="chat fixed-bottom">
+  <div class="{{classs}} messages">
+    <div class="message">
+     <span class="alignRight">Dude how are you</span>
+     </div>
+  </div>
+  <div class="yours messages">
+    <div class="message">
+    <span class="uid" >FuckBoi::</span>  Hey!
+    </div>
+    <div class="message">
+      You there?
+    </div>
+    <div class="message last">
+      Hello, how's it going?
+    </div>
+  </div>
+  <div class="mine messages">
+    <div class="message">
+      Great thanks!
+    </div> 
+    <div class="message last">
+      How about you?
+     </div>
+  </div>
+</div>
+    </div>
+    <div>
+        <div class="input-group  px-3 fixed-bottom shadow-lg p-3 bg-white rounded">
+            <input type="text" class="form-control" placeholder="Type Here" aria-label="Recipient's username" name="msgg" [(ngModel)]="msgg" recipient.username aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-success" type="button" (click)="sendMsg()">Send</button>
+            </div>
+          </div>
+    </div>
+      
+</div>

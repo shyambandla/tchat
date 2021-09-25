@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+<div class="div">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-2">
+    <a class="navbar-brand" href="#">Tor Chatr</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
+  </nav>
+</div>
+  <div class="animation-area">
+    <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="div">  <img src="assets/images/qrcode.png" class="rounded mx-auto d-block py-4" ></div>
+            <div class="mb-2 ">
+                <div class="text-center"><p class="bt-add ">bc1qlkcwcc5t8jlql8t3gzghldnvrjh3xced4fza3y</p></div></div>
+            <div class="text-center">
+                <button class="py-2 px-3 btn btn-primary" ngxClipboard [cbContent]="'bc1qlkcwcc5t8jlql8t3gzghldnvrjh3xced4fza3y'">Copy</button>
+            </div>
+            <div>
+                <div class="text-center">
+                    <button class="py-2 px-3 btn btn-success mt-2" (click)="openModal(template)" >Join Chat</button>
+                </div>
+            </div>
+          
+        </div>
+        <!-- text area-->
+        <div class="col-md-6">
+
+ <div class="text-center">
+     <h2 class="don-req text-center pt-4 ">Please Donate and Save This Site.. Support free speech and knowledge</h2>
+            </div>
+        </div>
+      </div>
+
+</div>
+<ng-template #template>
+    <div class="modal-header px-3">
+       <h4 class="modal-title pull-left">Choose Nick</h4>
+       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+        <div class="input-group mb-3 mt-3 px-2">
+            <input type="text" class="form-control py-2" [(ngModel)]="nname" maxlength="12" placeholder="Nick"  aria-label="Nick" aria-describedby="basic-addon2">
+            
+          </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success px-2 py-2 m-2 pull-left" (click)="onNick()">Join</button>
+       <button type="button" class="btn btn-danger px-2 py-2 m-2" (click)="modalRef.hide()">Close</button>
+    </div>
+ </ng-template>
+</div>
