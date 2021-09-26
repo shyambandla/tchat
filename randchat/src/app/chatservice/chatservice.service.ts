@@ -8,8 +8,7 @@ export class ChatserviceService {
 
   data: any = [];
   constructor(private socket: Socket) {
-    socket.on("error",(res: any)=>{console.log(res)});
-    socket.on("chat message",(data: any)=>{console.log(data)});
+    
   }
 
   sendMessage(msg: string) {
@@ -19,6 +18,13 @@ export class ChatserviceService {
    return this.socket.fromEvent('chat message').pipe(map(data => data));
  // return this.data = this.socket.ioSocket.receiveBuffer;
   }
-
-  
+  getOnline(){
+    return this.socket.fromEvent('online').pipe(map(data => data));
+  }
+  sendAdmin(msg:String){
+    this.socket.emit('admin', msg);
+  }
+  getAdmin(){
+    return this.socket.fromEvent('admin').pipe(map(data => data));
+  }
 }

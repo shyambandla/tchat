@@ -9,6 +9,7 @@
 </nav> -->
 <nav class="navbar sticky-top navbar-light bg-light">
   <a class="navbar-brand" href="#">Tor Chat</a>
+  <span class="online">{{online}}-online</span>
   <button type="button" class="btn btn-success" (click)="openModal(template)">Donate</button>
 </nav>
 
@@ -17,8 +18,11 @@
     <div >
 <div class="chat"   >
   <div *ngFor="let ms of messeges;" class="{{ms.classs}} messages">
-    <div class="message">
+    <div class="message" *ngIf="ms.isadmin==false">
    <span class="uuid font-weight-bold" *ngIf="ms.user!=from"  [style.color]="ms.color">{{ms.user}}::</span>  <span class="alignRight" [innerHTML]="ms.msg|linkify"></span>
+     </div>
+     <div class="admin message text-center" *ngIf="ms.isadmin">
+        <span class="alignRight" [innerHTML]="ms.msg|linkify"></span>
      </div>
   </div>
   

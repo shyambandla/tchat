@@ -47,7 +47,7 @@ msgg: string ='heyy yo';
 from:String="";
 
 classs:String="mine";
-
+online:String="0";
 
   messeges:any=[];
 
@@ -74,7 +74,24 @@ this.from=this.cookieService.get("nick");
           
         });
 
-       
+        this.chatService.getOnline().subscribe((data: any) =>{
+          this.online=String(data);
+          console.log(data);
+        });
+       this.chatService.getAdmin().subscribe((data: any) =>{
+
+        this.parseOnline(data);
+       });
+        var admin={
+            msg:this.from+" connected",
+            from:this.from
+        }
+
+        this.chatService.sendAdmin(JSON.stringify(admin));
+        var msgs={msg:"this site maynot be available soon.Please donate and Save This Site.  ",from:"admin"}
+        this.parseOnline(JSON.stringify(msgs));
+
+
 
   }
 
@@ -113,12 +130,29 @@ this.from=this.cookieService.get("nick");
         classs:cls,
         msg:val.msg,
         user:val.from,
-        color:val.color
+        color:val.color,
+        isadmin:false
       };
      this.messeges.push(obj);
      window.scrollTo(0,document.body.scrollHeight);
 
   }
+
+
+parseOnline(mmsg:any){
+  const val=JSON.parse(mmsg);
+  var cls:String='admin';
+  var obj={
+    classs:cls,
+    msg:val.msg,
+    user:"",
+    color:"",
+    isadmin:true
+  };
+ this.messeges.push(obj);
+ window.scrollTo(0,document.body.scrollHeight);
+}
+
 
   sendMsg(){
    // console.log(this.msgg);
