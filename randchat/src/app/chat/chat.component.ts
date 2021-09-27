@@ -88,7 +88,7 @@ this.from=this.cookieService.get("nick");
         }
 
         this.chatService.sendAdmin(JSON.stringify(admin));
-        var msgs={msg:"this site maynot be available soon.Please donate and Save This Site.  ",from:"admin"}
+        var msgs={msg:"this site maynot be available soon.Please donate and Save This Site. Maintainance charges are too heavy ",from:"admin"}
         this.parseOnline(JSON.stringify(msgs));
 
 

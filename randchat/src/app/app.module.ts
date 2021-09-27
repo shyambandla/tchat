@@ -11,7 +11,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs'
 import { CookieModule } from 'ngx-cookie';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-const config: SocketIoConfig = { url: 'http://ufify6xxxhjno4yinsbyyytlhpkwnf576latsjk4i4n7h46ftxg3hvid.onion:3000', options: {} };
+const config: SocketIoConfig = { url: 'http://ufify6xxxhjno4yinsbyyytlhpkwnf576latsjk4i4n7h46ftxg3hvid.onion', options: {} };
 
 @NgModule({
   declarations: [
